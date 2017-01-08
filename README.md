@@ -1,0 +1,2 @@
+# luammd-theme
+Default theme.
