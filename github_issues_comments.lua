@@ -1,6 +1,6 @@
-local exports = {}
 local conf = require "conf"
 
+local exports = {}
 
 local function html_github_issues_comments(issue_id)
   local html = [[

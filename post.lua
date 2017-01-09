@@ -4,6 +4,11 @@ local github_issues_comments = require "includes.github_issues_comments"
 local exports = {}
 
 local function html_post(metadata, content)
+  local github_comments_html = ""
+  if metadata.issueid ~= nil then
+    github_comments_html = github_issues_comments.html_github_issues_comments(metadata.issueid)
+  end
+
   local post = [[
           <section class="post">
             <h1>]] .. metadata.title .. [[</h1>
@@ -26,7 +31,7 @@ local function html_post(metadata, content)
             <a href="/categories/#]] .. metadata.categories .. [[" title="]] .. metadata.categories .. [[">]] .. metadata.categories .. [[</a>&nbsp;
           </span>
           </section>
-          ]] .. github_issues_comments.html_github_issues_comments(metadata.issueid) .. [[
+          ]] .. github_comments_html .. [[
           <script type="text/javascript">
           $(function(){
             $(document).keydown(function(e) {

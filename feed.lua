@@ -1,7 +1,8 @@
+local markdown = require "discount"
+
 local post_util = require "utils.post_util"
 local path_util = require "utils.path_util"
 local markdown_util = require "utils.markdown_util"
-local markdown = require "discount"
 
 local exports = {}
 
